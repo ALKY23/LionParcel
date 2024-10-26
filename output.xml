@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.3 on win32)" generated="2024-10-26T16:26:40.996406" rpa="false" schemaversion="5">
+<suite id="s1" name="LionParcel" source="E:\Automation\robot\LionParcel">
+<suite id="s1-s1" name="TestCase" source="E:\Automation\robot\LionParcel\TestCase">
+<suite id="s1-s1-s1" name="Assigment2" source="E:\Automation\robot\LionParcel\TestCase\assigment2.robot">
+<test id="s1-s1-s1-t1" name="Scenario: User logs in successfully" line="7">
+<kw name="Given the user opens the browser to the login page" owner="resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:41.437942" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-26T16:26:41.437942" elapsed="2.097017"/>
+</kw>
+<arg>https://www.saucedemo.com/</arg>
+<arg>chrome</arg>
+<status status="PASS" start="2024-10-26T16:26:41.437942" elapsed="2.097017"/>
+</kw>
+<kw name="When the user input valid login credentials" owner="resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:43.535961" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-26T16:26:43.535961" elapsed="0.108033"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:43.643994" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${pw}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-26T16:26:43.643994" elapsed="0.084021"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2024-10-26T16:26:43.534959" elapsed="0.193056"/>
+</kw>
+<kw name="And the user clicks the login button" owner="resources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:43.728886" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-26T16:26:43.728886" elapsed="0.075725"/>
+</kw>
+<status status="PASS" start="2024-10-26T16:26:43.728886" elapsed="0.075725"/>
+</kw>
+<kw name="Then the user should be logged in successfully" owner="resources">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:43.809778" level="INFO">Page title is 'Swag Labs'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-10-26T16:26:43.805594" elapsed="0.004184"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>currently on the page : ${title}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-26T16:26:43.809778" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-26T16:26:43.805594" elapsed="0.004184"/>
+</kw>
+<status status="PASS" start="2024-10-26T16:26:41.437942" elapsed="2.371836"/>
+</test>
+<test id="s1-s1-s1-t2" name="Scenario: User checks out items in the cart" line="13">
+<kw name="Given the user is logged in" owner="resources">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:43.825400" level="INFO">Element 'id:react-burger-menu-btn' is displayed.</msg>
+<arg>id:react-burger-menu-btn</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-26T16:26:43.809778" elapsed="0.015622"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:43.844521" level="INFO">Element 'id:shopping_cart_container' is displayed.</msg>
+<arg>id:shopping_cart_container</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-26T16:26:43.825400" elapsed="0.019121"/>
+</kw>
+<status status="PASS" start="2024-10-26T16:26:43.809778" elapsed="0.034743"/>
+</kw>
+<kw name="When the user on the product page user add item to the cart and proceeds to checkout" owner="resources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:43.844521" level="INFO">Clicking button 'id:add-to-cart-sauce-labs-backpack'.</msg>
+<arg>id:add-to-cart-sauce-labs-backpack</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-26T16:26:43.844521" elapsed="0.054213"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:43.913739" level="INFO">Element 'class:shopping_cart_badge' is displayed.</msg>
+<arg>class:shopping_cart_badge</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-26T16:26:43.898734" elapsed="0.015005"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:43.913739" level="INFO">Clicking element 'class:shopping_cart_badge'.</msg>
+<arg>class:shopping_cart_badge</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-26T16:26:43.913739" elapsed="0.042060"/>
+</kw>
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>id:checkout</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-10-26T16:26:43.955799" elapsed="0.018963"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:43.975764" level="INFO">Clicking button 'id:checkout'.</msg>
+<arg>id:checkout</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-26T16:26:43.975764" elapsed="0.044766"/>
+</kw>
+<status status="PASS" start="2024-10-26T16:26:43.844521" elapsed="0.176009"/>
+</kw>
+<kw name="And the user input checkout information" owner="resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:44.020530" level="INFO">Typing text 'haikal' into text field 'name:firstName'.</msg>
+<arg>name:firstName</arg>
+<arg>${fname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-26T16:26:44.020530" elapsed="0.075458"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:44.095988" level="INFO">Typing text 'test' into text field 'name:lastName'.</msg>
+<arg>name:lastName</arg>
+<arg>${lname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-26T16:26:44.095988" elapsed="0.066996"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:44.165198" level="INFO">Typing text '12345' into text field 'name:postalCode'.</msg>
+<arg>name:postalCode</arg>
+<arg>${pcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-26T16:26:44.165198" elapsed="0.063458"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:44.228656" level="INFO">Clicking button 'id:continue'.</msg>
+<arg>id:continue</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-26T16:26:44.228656" elapsed="0.052792"/>
+</kw>
+<arg>haikal</arg>
+<arg>test</arg>
+<arg>12345</arg>
+<status status="PASS" start="2024-10-26T16:26:44.020530" elapsed="0.260918"/>
+</kw>
+<kw name="Then the checkout overview page should display the selected items" owner="resources">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-26T16:26:44.281794" level="INFO">${desc} = xpath://div[@data-test="inventory-item-name" and contains(text(), "Sauce Labs Backpack")]</msg>
+<var>${desc}</var>
+<arg>xpath://div[@data-test="inventory-item-name" and contains(text(), "Sauce Labs Backpack")]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-26T16:26:44.281794" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:44.298643" level="INFO">Element 'xpath://div[@data-test="inventory-item-name" and contains(text(), "Sauce Labs Backpack")]' is displayed.</msg>
+<arg>${desc}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-26T16:26:44.281794" elapsed="0.016849"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:44.298643" level="INFO">Clicking button 'id:finish'.</msg>
+<arg>id:finish</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-26T16:26:44.298643" elapsed="0.047218"/>
+</kw>
+<status status="PASS" start="2024-10-26T16:26:44.281794" elapsed="0.064067"/>
+</kw>
+<kw name="and the user completes the purchase" owner="resources">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:44.364103" level="INFO">Element 'xpath=//*[@class="complete-header" and text()="Thank you for your order!"]' is displayed.</msg>
+<arg>xpath=//*[@class="complete-header" and text()="Thank you for your order!"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-26T16:26:44.347054" elapsed="0.017049"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-26T16:26:44.372025" level="INFO">Element 'xpath=//*[@class="title" and text()="Checkout: Complete!"]' is displayed.</msg>
+<arg>xpath=//*[@class="title" and text()="Checkout: Complete!"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-26T16:26:44.364103" elapsed="0.007922"/>
+</kw>
+<status status="PASS" start="2024-10-26T16:26:44.347054" elapsed="0.024971"/>
+</kw>
+<status status="PASS" start="2024-10-26T16:26:43.809778" elapsed="0.562247"/>
+</test>
+<status status="PASS" start="2024-10-26T16:26:41.027648" elapsed="3.344377"/>
+</suite>
+<status status="PASS" start="2024-10-26T16:26:41.027648" elapsed="3.344377"/>
+</suite>
+<status status="PASS" start="2024-10-26T16:26:40.996406" elapsed="3.375619"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="LionParcel">LionParcel</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="TestCase">LionParcel.TestCase</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="Assigment2">LionParcel.TestCase.Assigment2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
